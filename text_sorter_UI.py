@@ -76,7 +76,7 @@ class text_sorter_UI(QWidget):
             pass
 
     def pushButtonClicked(self):
-        fname = QFileDialog.getOpenFileName(self, 'Open file', "", "Text Files(*.txt);; All Files(*)", '/home')
+        fname = QFileDialog.getOpenFileName(self, 'Open file', "", "Text Files(*.txt);; All Files(*)")
         self.label.setText(fname[0])
 
     def toggleOrder(self):
@@ -88,8 +88,8 @@ class text_sorter_UI(QWidget):
             self.freq_tog.setChecked(False)
 
     def saveButtonClicked(self):
-        gname = QFileDialog.getSaveFileName(self, 'Save File As', "", "Excel Files(*.xlsx);; All Files(*)", '/home')
-        self.save_label.setText(gname[0])
+        gname = QFileDialog.getExistingDirectory(self, 'Select save directory')
+        self.save_label.setText(gname)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
